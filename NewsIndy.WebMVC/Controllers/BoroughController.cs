@@ -1,5 +1,7 @@
-﻿using NewsIndy.Data;
+﻿using Microsoft.AspNet.Identity;
+using NewsIndy.Data;
 using NewsIndy.Models;
+using NewsIndy.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,10 @@ namespace NewsIndy.WebMVC.Controllers
         // GET: Borough
         public ActionResult Index()
         {
-            var model = new BoroughListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BoroughService(userId);
+            var model = service.GetBoroughs();
+
             return View(model);
         }
 
@@ -28,12 +33,16 @@ namespace NewsIndy.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(BoroughCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                
+                return View(model);
             }
 
-            return View(model);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BoroughService(userId);
+            service.CreateBorough(model);
+
+            return RedirectToAction("Index");
         }
     }
 }
