@@ -12,6 +12,13 @@ namespace NewsIndy.WebMVC.Controllers
 {
     public class BoroughController : Controller
     {
+        private BoroughService CreateBoroughService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BoroughService(userId);
+            return service;
+        }
+
         // GET: Borough
         public ActionResult Index()
         {
@@ -38,11 +45,67 @@ namespace NewsIndy.WebMVC.Controllers
                 return View(model);
             }
 
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new BoroughService(userId);
-            service.CreateBorough(model);
+            var service = CreateBoroughService();
 
-            return RedirectToAction("Index");
+            if (service.CreateBorough(model))
+            {
+                TempData["SaveResult"] = "Your borough was created. ";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Borough could not be created.");
+
+            return View(model);
+        }
+
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateBoroughService();
+            var model = svc.GetBoroughById(id);
+
+            return View(model);
+        }
+
+        // GET: 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateBoroughService();
+            var detail = service.GetBoroughById(id);
+            var model =
+                new BoroughEdit
+                {
+                    BoroughId = detail.BoroughId,
+                    Name = detail.Name,
+                    Direction = detail.Direction
+                };
+            return View(model);
+        }
+
+        // POST:
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, BoroughEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.BoroughId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateBoroughService();
+
+            if (service.UpdateBorough(model))
+            {
+                TempData["SaveResult"] = "Your borough was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your borough could not be updated.");
+            return View(model);
+
         }
     }
 }

@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 
 namespace NewsIndy.Models
 {
-    public class BoroughCreate
+    public class BoroughEdit
     {
-        [Required]
-        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
-        [MaxLength(30, ErrorMessage = "There are too many characters in this field.")]
+        public int BoroughId { get; set; }
         public string Name { get; set; }
-
+        
         [Display(Name = "Side Of Indy")]
         public Direction Direction { get; set; }
     }

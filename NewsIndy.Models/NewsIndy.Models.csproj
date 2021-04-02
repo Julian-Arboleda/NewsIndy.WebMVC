@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoroughCreate.cs" />
+    <Compile Include="BoroughDetail.cs" />
+    <Compile Include="BoroughEdit.cs" />
     <Compile Include="BoroughListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

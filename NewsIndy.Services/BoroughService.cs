@@ -55,7 +55,40 @@ namespace NewsIndy.Services
                         );
 
                 return query.ToArray();
-                    
+            }
+        }
+
+        public BoroughDetail GetBoroughById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Boroughs
+                        .Single(e => e.BoroughId == id && e.CreatorId == _userId);
+                return
+                    new BoroughDetail
+                    {
+                        BoroughId = entity.BoroughId,
+                        Name = entity.Name,
+                        Direction = entity.Direction
+                    };
+            }
+        }
+
+        public bool UpdateBorough(BoroughEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                        ctx
+                             .Boroughs
+                             .Single(e => e.BoroughId == model.BoroughId && e.CreatorId == _userId);
+
+                entity.Name = model.Name;
+                entity.Direction = model.Direction;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

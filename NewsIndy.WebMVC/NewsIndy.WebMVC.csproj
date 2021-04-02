@@ -238,6 +238,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Borough\Index.cshtml" />
     <Content Include="Views\Borough\Create.cshtml" />
+    <Content Include="Views\Borough\Details.cshtml" />
+    <Content Include="Views\Borough\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
