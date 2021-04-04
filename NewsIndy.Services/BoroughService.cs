@@ -91,5 +91,20 @@ namespace NewsIndy.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteBorough(int BoroughId)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Boroughs
+                        .Single(e => e.BoroughId == BoroughId && e.CreatorId == _userId);
+
+                ctx.Boroughs.Remove(entity);
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
     }
 }

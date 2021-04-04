@@ -34,6 +34,8 @@ namespace NewsIndy.WebMVC.Data
         }
 
         public DbSet<Borough> Boroughs { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
+        public DbSet<Volunteer> Volunteers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

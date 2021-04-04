@@ -58,7 +58,7 @@ namespace NewsIndy.WebMVC.Controllers
             return View(model);
         }
 
-
+        // GET:
         public ActionResult Details(int id)
         {
             var svc = CreateBoroughService();
@@ -106,6 +106,27 @@ namespace NewsIndy.WebMVC.Controllers
             ModelState.AddModelError("", "Your borough could not be updated.");
             return View(model);
 
+        }
+
+        [HttpGet]
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateBoroughService();
+            var model = svc.GetBoroughById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteBorough(int id)
+        {
+            var service = CreateBoroughService();
+            service.DeleteBorough(id);
+            TempData["SaveResult"] = "Your borough was deleted";
+            return RedirectToAction("Index");
         }
     }
 }

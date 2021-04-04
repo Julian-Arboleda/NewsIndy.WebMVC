@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewsIndy.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,22 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewsIndy.Data
+namespace NewsIndy.Models
 {
-   public class Organization
+    public class OrgEdit
     {
-        [Key]
         public int OrgId { get; set; }
-
         [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
-        [Required]
+
+        [Display(Name = "Is a food bank")]
         public bool IsFoodBank { get; set; }
-        [Required]
+
+        [Display(Name = "Is a shelter")]
         public bool IsShelter { get; set; }
 
         [ForeignKey(nameof(Borough))]
-        public int BoroughId { get; set; }
+        [Display(Name = "Borough")]
+        public int? BoroughId { get; set; }
         public virtual Borough Borough { get; set; }
     }
 }
