@@ -2,6 +2,7 @@
 using NewsIndy.Data;
 using NewsIndy.Models;
 using NewsIndy.Services;
+using NewsIndy.WebMVC.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,23 @@ namespace NewsIndy.WebMVC.Controllers
 
             return View(model);
         }
+
+        public IEnumerable<BoroughListItem> GetBoroughList()
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Boroughs.Select(o => new BoroughListItem
+                {
+                    BoroughId = o.BoroughId,
+                    Name = o.Name,
+                    Direction = o.Direction
+                });
+
+                return query.ToArray();
+            }
+        }
+
+      
 
         // GET
         public ActionResult Create()

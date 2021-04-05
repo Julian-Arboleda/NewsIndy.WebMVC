@@ -18,6 +18,10 @@ namespace NewsIndy.Services
             _userId = userId;
         }
 
+        public BoroughService()
+        {
+        }
+
         public bool CreateBorough(BoroughCreate model)
         {
             var entity =
@@ -35,7 +39,7 @@ namespace NewsIndy.Services
             }
         }
 
-        public IEnumerable<BoroughListItem> GetBoroughs()
+        public IEnumerable<BoroughListItem> GetBoroughList()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -55,6 +59,30 @@ namespace NewsIndy.Services
                         );
 
                 return query.ToArray();
+            }
+        }
+
+        public IEnumerable<BoroughListItem> GetBoroughs()
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var query =
+                   ctx
+                   .Boroughs
+                   .Select(
+                       e =>
+                           new BoroughListItem
+                           {
+                               BoroughId = e.BoroughId,
+                               Name = e.Name,
+                               Direction = e.Direction
+                           }
+
+                       ).ToList();
+
+                return query;
+
+
             }
         }
 
