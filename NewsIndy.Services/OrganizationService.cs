@@ -17,6 +17,7 @@ namespace NewsIndy.Services
             {
                 var query = ctx.Organizations.Select(o => new OrganizationListItem
                 {
+                    OrgId = o.OrgId,
                     Name = o.Name, 
                     IsFoodBank = o.IsFoodBank,
                     IsShelter = o.IsShelter,

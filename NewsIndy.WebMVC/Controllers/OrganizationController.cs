@@ -49,6 +49,15 @@ namespace NewsIndy.WebMVC.Controllers
         }
 
         // GET:
+        public ActionResult Details(int id)
+        {
+            var svc = new OrganizationService();
+            var model = svc.GetOrganizationById(id);
+
+            return View(model);
+        }
+
+        // GET:
         [HttpGet]
         public ActionResult Edit(int id)
         {

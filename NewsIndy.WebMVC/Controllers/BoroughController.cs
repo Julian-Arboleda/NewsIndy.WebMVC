@@ -59,7 +59,7 @@ namespace NewsIndy.WebMVC.Controllers
             return View(model);
         }
 
-        // GET:
+        // GET: Details
         public ActionResult Details(int id)
         {
             var svc = CreateBoroughService();

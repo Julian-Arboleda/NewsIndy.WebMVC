@@ -23,9 +23,9 @@ namespace NewsIndy.Models
         [Display(Name="Is a shelter")]
         public bool IsShelter { get; set; }
 
-        //[Display(Name="Borough")]
-        [ForeignKey(nameof(Borough))]
+        [ForeignKey("BoroughId")]
+        [Display(Name="Borough")]
         public int BoroughId { get; set; }
-        //public virtual Borough Borough { get; set; }
+        public virtual Borough Borough { get; set; }
     }
 }

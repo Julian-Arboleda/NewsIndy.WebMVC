@@ -1,0 +1,58 @@
+﻿@model NewsIndy.Models.OrganizationDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrganizationDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFoodBank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFoodBank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsShelter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsShelter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoroughId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoroughId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
