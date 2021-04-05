@@ -93,7 +93,7 @@ namespace NewsIndy.Services
                 var entity =
                     ctx
                         .Boroughs
-                        .Single(e => e.BoroughId == id && e.CreatorId == _userId);
+                        .Single(e => e.BoroughId == id /*&& e.CreatorId == _userId*/);
                 return
                     new BoroughDetail
                     {
