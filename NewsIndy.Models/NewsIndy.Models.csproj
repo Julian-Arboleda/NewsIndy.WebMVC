@@ -63,6 +63,10 @@
     <Compile Include="Organizations\OrganizationEdit.cs" />
     <Compile Include="Organizations\OrganizationListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VolunteerCreate.cs" />
+    <Compile Include="VolunteerDetail.cs" />
+    <Compile Include="VolunteerEdit.cs" />
+    <Compile Include="VolunteerListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewsIndy.Data\NewsIndy.Data.csproj">

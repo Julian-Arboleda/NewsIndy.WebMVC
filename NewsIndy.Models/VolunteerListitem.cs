@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewsIndy.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewsIndy.Data
+namespace NewsIndy.Models
 {
-    public class Volunteer
+    public class VolunteerListItem
     {
-        [Key]
         public int VolunteerId { get; set; }
-        [Required]
+        [Display(Name="First Name")]
         public string FirstName { get; set; }
-        [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
+        [Display(Name = "Full Name")]
         public string FullName
         {
             get
@@ -25,9 +26,7 @@ namespace NewsIndy.Data
 
         }
 
-        [ForeignKey(nameof(Organization))]
         [Required]
-        public int OrgId {get;set;}
-        public virtual Organization Organization { get; set; }
+        public int OrgId { get; set; }
     }
 }
