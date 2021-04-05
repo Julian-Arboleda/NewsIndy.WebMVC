@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NewsIndy.Models
 {
-   public class OrgDetail
+    public class OrganizationListItem
     {
         public int OrgId { get; set; }
         public string Name { get; set; }
@@ -22,7 +22,7 @@ namespace NewsIndy.Models
 
         [ForeignKey(nameof(Borough))]
         [Display(Name = "Borough")]
-        public int? BoroughId { get; set; }
+        public int BoroughId { get; set; }
         public virtual Borough Borough { get; set; }
     }
 }

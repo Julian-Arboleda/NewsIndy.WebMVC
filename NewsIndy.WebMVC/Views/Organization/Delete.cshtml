@@ -1,0 +1,64 @@
+﻿@model NewsIndy.Models.OrganizationDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>OrganizationDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFoodBank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFoodBank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsShelter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsShelter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoroughId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoroughId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

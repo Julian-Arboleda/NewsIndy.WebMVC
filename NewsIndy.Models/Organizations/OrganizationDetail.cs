@@ -9,23 +9,20 @@ using System.Threading.Tasks;
 
 namespace NewsIndy.Models
 {
-   public class OrgCreate
+   public class OrganizationDetail
     {
-        [Required]
-        [MaxLength(50)]
+        public int OrgId { get; set; }
         public string Name { get; set; }
-        
-        [Required]
+
         [Display(Name = "Is a food bank")]
         public bool IsFoodBank { get; set; }
-        
-        [Required]
-        [Display(Name="Is a shelter")]
+
+        [Display(Name = "Is a shelter")]
         public bool IsShelter { get; set; }
 
         [ForeignKey(nameof(Borough))]
-        [Display(Name="Borough")]
-        public int? BoroughId { get; set; }
+        [Display(Name = "Borough")]
+        public int BoroughId { get; set; }
         public virtual Borough Borough { get; set; }
     }
 }

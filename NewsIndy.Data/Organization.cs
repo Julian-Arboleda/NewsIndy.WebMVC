@@ -20,8 +20,8 @@ namespace NewsIndy.Data
         [Required]
         public bool IsShelter { get; set; }
 
-        [ForeignKey(nameof(Borough))]
         public int BoroughId { get; set; }
+        [ForeignKey("BoroughId")]
         public virtual Borough Borough { get; set; }
     }
 }

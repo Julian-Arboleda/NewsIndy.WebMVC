@@ -12,6 +12,7 @@ namespace NewsIndy.Models
     {
         public int BoroughId { get; set; }
         public string Name { get; set; }
+        [Display(Name = "Side of Indy")]
         public Direction Direction { get; set; }
     }
 }

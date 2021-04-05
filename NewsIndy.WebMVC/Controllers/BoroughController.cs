@@ -32,6 +32,7 @@ namespace NewsIndy.WebMVC.Controllers
         // GET
         public ActionResult Create()
         {
+            ViewBag.Title = "Boroughs";
             return View();
         }
 

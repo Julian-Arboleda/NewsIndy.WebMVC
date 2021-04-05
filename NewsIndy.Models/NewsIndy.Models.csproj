@@ -58,10 +58,10 @@
     <Compile Include="Boroughs\BoroughDetail.cs" />
     <Compile Include="Boroughs\BoroughEdit.cs" />
     <Compile Include="Boroughs\BoroughListItem.cs" />
-    <Compile Include="OrgCreate.cs" />
-    <Compile Include="OrgDetail.cs" />
-    <Compile Include="OrgEdit.cs" />
-    <Compile Include="OrgListItem.cs" />
+    <Compile Include="Organizations\OrganizationCreate.cs" />
+    <Compile Include="Organizations\OrganizationDetail.cs" />
+    <Compile Include="Organizations\OrganizationEdit.cs" />
+    <Compile Include="Organizations\OrganizationListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
