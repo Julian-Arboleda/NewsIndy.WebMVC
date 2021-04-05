@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NewsIndy.Services
 {
-   public class OrganizationService
+    public class OrganizationService
     {
         public IEnumerable<OrganizationListItem> GetOrganizationList()
         {
@@ -18,7 +18,7 @@ namespace NewsIndy.Services
                 var query = ctx.Organizations.Select(o => new OrganizationListItem
                 {
                     OrgId = o.OrgId,
-                    Name = o.Name, 
+                    Name = o.Name,
                     IsFoodBank = o.IsFoodBank,
                     IsShelter = o.IsShelter,
                     BoroughId = o.BoroughId
@@ -28,6 +28,29 @@ namespace NewsIndy.Services
             }
         }
 
+        public IEnumerable<OrganizationListItem> GetOrganizations()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                   ctx
+                   .Organizations
+                   .Select(
+                       e =>
+                           new OrganizationListItem
+                           {
+                               BoroughId = e.BoroughId,
+                               Name = e.Name,
+                               OrgId = e.OrgId
+                           }
+
+                       ).ToList();
+
+                return query;
+
+
+            }
+        }
 
 
         public OrganizationDetail GetOrganizationById(int id)
