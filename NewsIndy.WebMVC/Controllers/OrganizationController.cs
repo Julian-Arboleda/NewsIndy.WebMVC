@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using NewsIndy.Data;
 using NewsIndy.Models;
 using NewsIndy.Services;
 using System;
@@ -22,6 +23,16 @@ namespace NewsIndy.WebMVC.Controllers
         public ActionResult Create()
         {
             ViewBag.Title = "Organizations";
+
+            List<BoroughListItem> Boroughs = (new BoroughService()).GetBoroughs().ToList();
+            //Borough.Select(o => new SelectListItem() { }); may be async error, prefer this way -->
+            var query = from b in Boroughs select new SelectListItem()
+            {
+                Value = b.BoroughId.ToString(),
+                Text = b.Name
+            };
+            ViewBag.BoroughId = query.ToList();
+            
             return View();
         }
 
@@ -72,6 +83,22 @@ namespace NewsIndy.WebMVC.Controllers
                     IsShelter = detail.IsShelter,
                     BoroughId = detail.BoroughId
                 };
+
+            List<BoroughListItem> Boroughs = (new BoroughService()).GetBoroughs().ToList();
+            /* ViewBag.BoroughId = Boroughs.Select(b => new SelectListItem() 
+              {
+                  Value = b.BoroughId.ToString(),
+                  Text = b.Name,
+                  Selected = service.BoroughId == b.BoroughId
+              }); */
+
+            var query = from b in Boroughs
+                        select new SelectListItem()
+                        {
+                            Value = b.BoroughId.ToString(),
+                            Text = b.Name
+                        };
+            ViewBag.BoroughId = query.ToList();
             return View(model);
         }
 

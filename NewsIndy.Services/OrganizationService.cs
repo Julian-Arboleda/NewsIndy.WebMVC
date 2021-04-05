@@ -28,6 +28,8 @@ namespace NewsIndy.Services
             }
         }
 
+
+
         public OrganizationDetail GetOrganizationById(int id)
         {
             using (var ctx = new ApplicationDbContext())

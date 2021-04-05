@@ -27,5 +27,7 @@ namespace NewsIndy.Models
         [Display(Name="Borough")]
         public int BoroughId { get; set; }
         public virtual Borough Borough { get; set; }
+
+        // public SelectList boroughOptions { get; set; }
     }
 }
