@@ -57,6 +57,7 @@
     <Compile Include="BoroughService.cs" />
     <Compile Include="OrganizationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VolunteerServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewsIndy.Data\NewsIndy.Data.csproj">

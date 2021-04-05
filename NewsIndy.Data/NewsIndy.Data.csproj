@@ -56,6 +56,35 @@
   <ItemGroup>
     <Compile Include="Borough.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202104051621538_InitialCreate.cs" />
+    <Compile Include="Migrations\202104051621538_InitialCreate.Designer.cs">
+      <DependentUpon>202104051621538_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104051947167_added volunteer table.cs" />
+    <Compile Include="Migrations\202104051947167_added volunteer table.Designer.cs">
+      <DependentUpon>202104051947167_added volunteer table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104051949396_fixed volunteer table.cs" />
+    <Compile Include="Migrations\202104051949396_fixed volunteer table.Designer.cs">
+      <DependentUpon>202104051949396_fixed volunteer table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104051951569_fixed volunteer table1.cs" />
+    <Compile Include="Migrations\202104051951569_fixed volunteer table1.Designer.cs">
+      <DependentUpon>202104051951569_fixed volunteer table1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104051954007_fixed volunteer table2.cs" />
+    <Compile Include="Migrations\202104051954007_fixed volunteer table2.Designer.cs">
+      <DependentUpon>202104051954007_fixed volunteer table2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104051959016_fixed volunteer table3.cs" />
+    <Compile Include="Migrations\202104051959016_fixed volunteer table3.Designer.cs">
+      <DependentUpon>202104051959016_fixed volunteer table3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104052012437_fixed volunteer table4lol.cs" />
+    <Compile Include="Migrations\202104052012437_fixed volunteer table4lol.Designer.cs">
+      <DependentUpon>202104052012437_fixed volunteer table4lol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Organization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Volunteer.cs" />
@@ -63,6 +92,29 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202104051621538_InitialCreate.resx">
+      <DependentUpon>202104051621538_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104051947167_added volunteer table.resx">
+      <DependentUpon>202104051947167_added volunteer table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104051949396_fixed volunteer table.resx">
+      <DependentUpon>202104051949396_fixed volunteer table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104051951569_fixed volunteer table1.resx">
+      <DependentUpon>202104051951569_fixed volunteer table1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104051954007_fixed volunteer table2.resx">
+      <DependentUpon>202104051954007_fixed volunteer table2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104051959016_fixed volunteer table3.resx">
+      <DependentUpon>202104051959016_fixed volunteer table3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104052012437_fixed volunteer table4lol.resx">
+      <DependentUpon>202104052012437_fixed volunteer table4lol.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
