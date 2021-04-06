@@ -16,10 +16,7 @@ namespace NewsIndy.Data
         [Required]
         public string Name { get; set; }
         [Required]
-        public bool IsFoodBank { get; set; }
-        [Required]
-        public bool IsShelter { get; set; }
-
+        public string Description { get; set; }
         public int BoroughId { get; set; }
         [ForeignKey("BoroughId")]
         public virtual Borough Borough { get; set; }

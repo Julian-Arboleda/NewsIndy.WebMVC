@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace NewsIndy.WebMVC.Controllers
 {
+    [Authorize]
     public class BoroughController : Controller
     {
         private BoroughService CreateBoroughService()
@@ -21,6 +22,7 @@ namespace NewsIndy.WebMVC.Controllers
         }
 
         // GET: Borough
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -30,6 +32,7 @@ namespace NewsIndy.WebMVC.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
         public IEnumerable<BoroughListItem> GetBoroughList()
         {
             using(var ctx = new ApplicationDbContext())
@@ -78,6 +81,7 @@ namespace NewsIndy.WebMVC.Controllers
         }
 
         // GET: Details
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             var svc = CreateBoroughService();

@@ -8,10 +8,12 @@ using System.Web.Mvc;
 
 namespace NewsIndy.WebMVC.Controllers
 {
+    [Authorize]
     public class VolunteerController : Controller
     {
 
         // GET: Volunteer
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(new VolunteerService().GetVolunteerList());
@@ -59,6 +61,7 @@ namespace NewsIndy.WebMVC.Controllers
         }
 
         // GET:
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             var svc = new VolunteerService();
