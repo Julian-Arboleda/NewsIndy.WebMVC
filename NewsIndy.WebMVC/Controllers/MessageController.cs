@@ -39,7 +39,10 @@ namespace NewsIndy.WebMVC.Controllers
                 var query = ctx.Messages.Select(o => new MessageListItem
                 {
                     MessageId = o.MessageId,
-                    Content = o.Content
+                    Subject = o.Subject,
+                    Content = o.Content,
+                    DateCreated = o.DateCreated,
+                    ModifiedDateCreated = o.ModifiedDateCreated
                 });
 
                 return query.ToArray();
@@ -97,7 +100,10 @@ namespace NewsIndy.WebMVC.Controllers
                 new MessageEdit
                 {
                     MessageId = detail.MessageId,
-                    Content = detail.Content
+                    Subject = detail.Subject,
+                    Content = detail.Content,
+                    DateCreated = detail.DateCreated,
+                    ModifiedDateCreated = detail.ModifiedDateCreated
                 };
             return View(model);
         }
