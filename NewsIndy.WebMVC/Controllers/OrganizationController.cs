@@ -10,10 +10,11 @@ using System.Web.Mvc;
 
 namespace NewsIndy.WebMVC.Controllers
 {
+    [Authorize]
     public class OrganizationController : Controller
     {
-        
         // GET: Organization
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(new OrganizationService().GetOrganizationList());
@@ -26,13 +27,14 @@ namespace NewsIndy.WebMVC.Controllers
 
             List<BoroughListItem> Boroughs = (new BoroughService()).GetBoroughs().ToList();
             //Borough.Select(o => new SelectListItem() { }); may be async error, prefer this way -->
-            var query = from b in Boroughs select new SelectListItem()
-            {
-                Value = b.BoroughId.ToString(),
-                Text = b.Name
-            };
+            var query = from b in Boroughs
+                        select new SelectListItem()
+                        {
+                            Value = b.BoroughId.ToString(),
+                            Text = b.Name
+                        };
             ViewBag.BoroughId = query.ToList();
-            
+
             return View();
         }
 
@@ -60,6 +62,7 @@ namespace NewsIndy.WebMVC.Controllers
         }
 
         // GET:
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             var svc = new OrganizationService();
@@ -79,8 +82,7 @@ namespace NewsIndy.WebMVC.Controllers
                 {
                     OrgId = detail.OrgId,
                     Name = detail.Name,
-                    IsFoodBank = detail.IsFoodBank,
-                    IsShelter = detail.IsShelter,
+                    Description = detail.Description,
                     BoroughId = detail.BoroughId
                 };
 
@@ -109,7 +111,7 @@ namespace NewsIndy.WebMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.OrgId != id)
+            if (model.OrgId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

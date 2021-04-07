@@ -19,8 +19,7 @@ namespace NewsIndy.Services
                 {
                     OrgId = o.OrgId,
                     Name = o.Name,
-                    IsFoodBank = o.IsFoodBank,
-                    IsShelter = o.IsShelter,
+                    Description = o.Description,
                     BoroughId = o.BoroughId
                 });
 
@@ -41,6 +40,8 @@ namespace NewsIndy.Services
                            {
                                BoroughId = e.BoroughId,
                                Name = e.Name,
+                               Description = e.Description,
+
                                OrgId = e.OrgId
                            }
 
@@ -66,8 +67,7 @@ namespace NewsIndy.Services
                     {
                         OrgId = entity.OrgId,
                         Name = entity.Name,
-                        IsFoodBank = entity.IsFoodBank,
-                        IsShelter = entity.IsShelter,
+                        Description = entity.Description,
                         BoroughId = entity.BoroughId
                     };
             }
@@ -79,9 +79,8 @@ namespace NewsIndy.Services
                 new Organization()
                 {
                     Name = model.Name,
-                    IsFoodBank = model.IsFoodBank,
-                    IsShelter = model.IsShelter,
-                    BoroughId = model.BoroughId,
+                    Description = model.Description,
+                    BoroughId = model.BoroughId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -101,8 +100,7 @@ namespace NewsIndy.Services
                              .Single(e => e.OrgId == model.OrgId);
 
                 entity.Name = model.Name;
-                entity.IsFoodBank = model.IsFoodBank;
-                entity.IsShelter = model.IsShelter;
+                entity.Description = model.Description;
                 entity.BoroughId = model.BoroughId;
 
                 return ctx.SaveChanges() == 1;

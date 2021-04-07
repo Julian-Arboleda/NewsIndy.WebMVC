@@ -16,13 +16,7 @@ namespace NewsIndy.Models
         public string Name { get; set; }
         
         [Required]
-        [Display(Name = "Is a food bank")]
-        public bool IsFoodBank { get; set; }
-        
-        [Required]
-        [Display(Name="Is a shelter")]
-        public bool IsShelter { get; set; }
-
+        public string Description { get; set; }
         [ForeignKey("BoroughId")]
         [Display(Name="Borough")]
         public int BoroughId { get; set; }
