@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Borough.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Migrations\202104052215012_InitialCreate.cs" />
     <Compile Include="Migrations\202104052215012_InitialCreate.Designer.cs">
       <DependentUpon>202104052215012_InitialCreate.cs</DependentUpon>
@@ -63,6 +64,10 @@
     <Compile Include="Migrations\202104061936016_replaced place bools with Description property.cs" />
     <Compile Include="Migrations\202104061936016_replaced place bools with Description property.Designer.cs">
       <DependentUpon>202104061936016_replaced place bools with Description property.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104071922029_added message functionality.cs" />
+    <Compile Include="Migrations\202104071922029_added message functionality.Designer.cs">
+      <DependentUpon>202104071922029_added message functionality.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Organization.cs" />
@@ -79,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104061936016_replaced place bools with Description property.resx">
       <DependentUpon>202104061936016_replaced place bools with Description property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104071922029_added message functionality.resx">
+      <DependentUpon>202104071922029_added message functionality.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
