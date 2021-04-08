@@ -36,7 +36,11 @@ namespace NewsIndy.WebMVC.Data
         public DbSet<Borough> Boroughs { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Volunteer> Volunteers { get; set; }
+
         public DbSet<Event> Events {get;set;}
+
+        public DbSet<Message> Messages { get; set; }
+        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
