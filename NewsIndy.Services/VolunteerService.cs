@@ -17,6 +17,7 @@ namespace NewsIndy.Services
             {
                 var query = ctx.Volunteers.Select(o => new VolunteerListItem
                 {
+                    VolunteerId = o.VolunteerId,
                     OrgId = o.OrgId,
                     FirstName = o.FirstName,
                     LastName = o.LastName,
