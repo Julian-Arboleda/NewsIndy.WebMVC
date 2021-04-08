@@ -27,8 +27,8 @@ namespace NewsIndy.Services
                     CreatorId = _userId,
                     Subject = model.Subject,
                     Content = model.Content,
-                    DateCreated = model.DateCreated,
-                    ModifiedDateCreated = model.ModifiedDateCreated
+                    DateCreated = DateTime.Now
+                   // ModifiedDateCreated = model.ModifiedDateCreated
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -54,7 +54,7 @@ namespace NewsIndy.Services
                                 Subject = e.Subject,
                                 Content = e.Content,
                                 DateCreated = e.DateCreated,
-                                ModifiedDateCreated = e.ModifiedDateCreated
+                              // ModifiedDateCreated = e.ModifiedDateCreated
                             }
 
                         );
@@ -78,7 +78,7 @@ namespace NewsIndy.Services
                                Subject = e.Subject,
                                Content = e.Content,
                                DateCreated = e.DateCreated,
-                               ModifiedDateCreated = e.ModifiedDateCreated
+                              // ModifiedDateCreated = e.ModifiedDateCreated
                            }
 
                        ).ToList();
@@ -119,7 +119,7 @@ namespace NewsIndy.Services
                 entity.Content = model.Content;
                 entity.Subject = model.Subject;
                 entity.DateCreated = model.DateCreated;
-                entity.ModifiedDateCreated = model.ModifiedDateCreated;
+               // entity.ModifiedDateCreated = model.ModifiedDateCreated;
 
                 return ctx.SaveChanges() == 1;
             }
