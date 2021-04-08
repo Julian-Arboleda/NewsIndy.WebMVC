@@ -14,7 +14,7 @@ namespace NewsIndy.Models
         [Required]
         public string Subject { get; set; }
         public DateTimeOffset DateCreated { get; set; }
-        public DateTimeOffset? ModifiedDateCreated { get; set; }
+      //  public DateTimeOffset? ModifiedDateCreated { get; set; }
 
     }
 }

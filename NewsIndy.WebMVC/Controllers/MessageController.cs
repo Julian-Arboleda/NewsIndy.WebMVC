@@ -42,7 +42,7 @@ namespace NewsIndy.WebMVC.Controllers
                     Subject = o.Subject,
                     Content = o.Content,
                     DateCreated = o.DateCreated,
-                    ModifiedDateCreated = o.ModifiedDateCreated
+                   // ModifiedDateCreated = o.ModifiedDateCreated
                 });
 
                 return query.ToArray();
@@ -103,7 +103,7 @@ namespace NewsIndy.WebMVC.Controllers
                     Subject = detail.Subject,
                     Content = detail.Content,
                     DateCreated = detail.DateCreated,
-                    ModifiedDateCreated = detail.ModifiedDateCreated
+                    //ModifiedDateCreated = detail.ModifiedDateCreated
                 };
             return View(model);
         }

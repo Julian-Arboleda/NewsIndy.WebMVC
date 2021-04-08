@@ -16,7 +16,11 @@ namespace NewsIndy.Data
         [Required]
         public string Subject { get; set; }
         public DateTimeOffset DateCreated { get; set; }
-        public DateTimeOffset? ModifiedDateCreated { get; set; }
+        public Message()
+        {
+            DateCreated = DateTimeOffset.UtcNow;
+        }
+       // public DateTimeOffset? ModifiedDateCreated { get; set; }
         public Guid CreatorId { get; set; }
     }
 }
