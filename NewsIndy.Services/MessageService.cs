@@ -27,7 +27,7 @@ namespace NewsIndy.Services
                     CreatorId = _userId,
                     Subject = model.Subject,
                     Content = model.Content,
-                    DateCreated = DateTime.Now
+                    DateCreated = DateTime.Now, 
                    // ModifiedDateCreated = model.ModifiedDateCreated
                 };
 
@@ -54,7 +54,7 @@ namespace NewsIndy.Services
                                 Subject = e.Subject,
                                 Content = e.Content,
                                 DateCreated = e.DateCreated,
-                              // ModifiedDateCreated = e.ModifiedDateCreated
+                                // ModifiedDateCreated = e.ModifiedDateCreated
                             }
 
                         );
