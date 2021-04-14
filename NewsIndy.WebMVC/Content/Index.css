@@ -1,2 +1,37 @@
 ﻿body {
+    background-color: #dfeed7;
+    font-palette: light;
+    
+    
+}
+
+.container{
+    font-family: Georgia;
+    align-self: center
+}
+
+.jumbotron {
+    background-color: #dfeed7;
+    align-self: start ;
+}
+
+
+.navbar {
+    background-color: #1a4823;
+    text-decoration-color:black;
+    color: lightgreen;
+    
+
+}
+
+.text-info{
+    nav-index;
+}
+
+/*.nav.navbar-nav.navbar-right li a {
+    color: lightgreen;
+}*/
+
+.navbar > .container .navbar-brand {
+    color: #fffffe;
 }
