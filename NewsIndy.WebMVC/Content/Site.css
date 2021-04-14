@@ -2,6 +2,7 @@
     padding-top: 40px;
     padding-bottom: 20px;
     background-color: #fffffe;
+   
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -35,8 +36,12 @@ hr {
     .nav.navbar-nav li a:hover {
         color: greenyellow;
     }
+
 .lead {
-    font-size-adjust: .4
+    font-size-adjust: .4;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: inherit
 }
 
 .btn-default {
@@ -45,10 +50,12 @@ hr {
 }
 
 .row {
-    font-size-adjust: .6
+    font-size-adjust: .6;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.container.jumbotron  {
+.container.jumbotron {
     padding-right: 40px;
     padding-left: 30px;
 }
